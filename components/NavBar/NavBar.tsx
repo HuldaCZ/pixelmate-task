@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import PixelmateLogo from "../../public/img/Pixelmate_logo_claim_white.svg";
 
 import styles from "./NavBar.module.scss";
@@ -6,8 +6,24 @@ import styles from "./NavBar.module.scss";
 import Button from "../Button/Button";
 
 const NavBar: React.FC = () => {
+  const [isScrolled, setIsScrolled] = React.useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
+
+  useLayoutEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className={styles.navbar}>
+    <nav className={isScrolled ? styles.navbar_scrolled : styles.navbar}>
       <div className={styles.navbar__container}>
         <div className={styles.navbar__logo_container}>
           <PixelmateLogo />

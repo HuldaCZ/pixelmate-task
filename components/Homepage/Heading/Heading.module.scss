@@ -1,4 +1,5 @@
 @import "../../../styles/variables";
+@import "../../../styles/animations";
 
 .heading {
   &__title {
@@ -8,6 +9,7 @@
     margin-bottom: 1.5rem;
     margin-top: 5rem;
     color: $color-primary-light;
+    animation: moveInLeft 1s ease-in-out;
   }
 
   &__subtitle {
@@ -17,6 +19,7 @@
     line-height: 1.2;
     margin-bottom: 1.5rem;
     color: $color-gray;
+    animation: moveInRight 1s ease-in-out;
   }
 
   &__container {
@@ -32,5 +35,6 @@
     line-height: 1.2;
     margin-bottom: 1.5rem;
     letter-spacing: 0.1rem;
+    animation: moveInBottom 0.9s ease-in-out;
   }
 }
