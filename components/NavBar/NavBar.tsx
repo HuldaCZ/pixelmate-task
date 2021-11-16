@@ -25,7 +25,7 @@ const NavBar: React.FC = () => {
               </a>
             </li>
             <li className={styles.navbar__menu_item}>
-              <Button onClick={() => {}} design="fill" text="Přihlásit se" />
+              <Button onClick={() => {}} design="outline" text="Přihlásit se" />
             </li>
           </ul>
         </div>

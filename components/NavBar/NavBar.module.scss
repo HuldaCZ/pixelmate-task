@@ -18,6 +18,7 @@
     padding: 3rem 4rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   &__menu {
@@ -30,10 +31,10 @@
     &_item {
       display: flex;
       align-items: center;
-
       padding: 0.5rem 1rem;
-      margin: 0;
+      margin-left: 1rem;
       list-style: none;
+      transition: all 0.1s;
 
       &_link {
         text-decoration: none;
@@ -41,6 +42,15 @@
         color: $color-primary-light;
         letter-spacing: 0.1rem;
         cursor: pointer;
+      }
+
+      &_link:hover {
+        transform: scale(1.05);
+        border-bottom: 1px solid $color-primary-light;
+      }
+
+      &:active {
+        transform: translateY(-1px) scale(0.98);
       }
     }
   }

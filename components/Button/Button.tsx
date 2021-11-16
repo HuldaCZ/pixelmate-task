@@ -5,7 +5,10 @@ import styles from "./Button.module.scss";
 
 const Button: React.FC<ButtonPropsI> = (props: ButtonPropsI) => {
   return (
-    <div className={props.design === "fill" ? styles.btn__fill : styles.btn__outline}>
+    <div
+      className={props.design === "fill" ? styles.btn__fill : styles.btn__outline}
+      onClick={props.onClick}
+    >
       {props.text}
     </div>
   );
