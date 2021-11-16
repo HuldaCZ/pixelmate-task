@@ -4,7 +4,8 @@ import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 
 import NavBar from "../components/NavBar/NavBar";
-import Header from "../components/Header/Header";
+import Header from "../components/Homepage/Header/Header";
+import Heading from "../components/Homepage/Heading/Heading";
 
 const Home: NextPage = () => {
   return (
@@ -19,11 +20,17 @@ const Home: NextPage = () => {
           rel="stylesheet"
         />
       </Head>
-
       <NavBar />
       <Header />
 
-      <main className={styles.main}></main>
+      <main className={styles.main}>
+        <div className={styles.main__row}>
+          <div className={styles.main__column}>
+            <Heading />
+          </div>
+          <div></div>
+        </div>
+      </main>
 
       <footer className={styles.footer}></footer>
     </div>
