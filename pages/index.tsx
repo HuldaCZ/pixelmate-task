@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 
 import NavBar from "../components/NavBar/NavBar";
@@ -8,6 +7,7 @@ import Header from "../components/Homepage/Header/Header";
 import Heading from "../components/Homepage/Heading/Heading";
 import LoginForm from "../components/Homepage/LoginForm/LoginForm";
 import RefLogo from "../components/Homepage/RefLogo/RefLogo";
+import Footer from "../components/Footer/Footer";
 
 const Home: NextPage = () => {
   return (
@@ -37,11 +37,19 @@ const Home: NextPage = () => {
         <div className={styles.main_row}>
           <RefLogo />
         </div>
+        <div className={styles.main__row}>
+          <div className={styles.main__column}>
+
+          </div>
+          <div className={styles.main__column}>
+            
+            </div>
+        </div>
       </main>
 
-      <footer className={styles.footer}></footer>
+      <Footer />
     </div>
-  );
+  );;
 };
 
 export default Home;

@@ -1,0 +1,26 @@
+@import "../../styles/variables";
+
+.footer {
+  position: relative;
+  padding: 3rem 0;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 10rem;
+  height: 10rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  background-image: linear-gradient(to bottom, #161b40, #140f29);
+  color: $color-gray;
+  display: table;
+  align-items: center;
+
+  &__container {
+    max-width: 130rem;
+    position: relative;
+    margin: 0 auto;
+    padding: 0 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
