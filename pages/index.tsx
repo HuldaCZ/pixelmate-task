@@ -6,6 +6,7 @@ import styles from "../styles/Home.module.scss";
 import NavBar from "../components/NavBar/NavBar";
 import Header from "../components/Homepage/Header/Header";
 import Heading from "../components/Homepage/Heading/Heading";
+import LoginForm from "../components/Homepage/LoginForm/LoginForm";
 
 const Home: NextPage = () => {
   return (
@@ -28,7 +29,9 @@ const Home: NextPage = () => {
           <div className={styles.main__column}>
             <Heading />
           </div>
-          <div></div>
+          <div>
+            <LoginForm />
+          </div>
         </div>
       </main>
 

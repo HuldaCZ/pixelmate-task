@@ -1,12 +1,13 @@
 @import "../../styles/variables";
 
 .btn__fill {
-  padding: 1rem 3rem;
+  padding: 1.4rem 3rem;
   border-radius: 31px 31px 31px 0px;
   background: $color-primary;
   color: $color-primary-light;
   cursor: pointer;
   transition: all 0.2s;
+  text-align: center;
 
   &:hover {
     background: $color-primary-light;
@@ -29,6 +30,7 @@
   color: $color-primary-light;
   transition: all 0.2s;
   cursor: pointer;
+  text-align: center;
 
   &:hover {
     background: $color-primary-light;
