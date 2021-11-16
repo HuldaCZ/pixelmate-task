@@ -1,0 +1,23 @@
+@import "../../../styles/variables";
+
+.logos {
+  &_container {
+    background-color: $color-white;
+    margin-top: 18rem;
+    padding: 1rem 5rem;
+    height: 13.4rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.1);
+  }
+}
+
+.logo {
+    &_container {
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+}

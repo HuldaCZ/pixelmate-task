@@ -7,6 +7,7 @@ import NavBar from "../components/NavBar/NavBar";
 import Header from "../components/Homepage/Header/Header";
 import Heading from "../components/Homepage/Heading/Heading";
 import LoginForm from "../components/Homepage/LoginForm/LoginForm";
+import RefLogo from "../components/Homepage/RefLogo/RefLogo";
 
 const Home: NextPage = () => {
   return (
@@ -32,6 +33,9 @@ const Home: NextPage = () => {
           <div>
             <LoginForm />
           </div>
+        </div>
+        <div className={styles.main_row}>
+          <RefLogo />
         </div>
       </main>
 

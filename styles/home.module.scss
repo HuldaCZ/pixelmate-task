@@ -1,19 +1,17 @@
 .main {
-  // background-color: #d32f2f;
+  // background-color: #d32f2f;;
   position: absolute;
-  top: 10rem;
+  top: 14vh;
   left: 50%;
   transform: translate(-50%);
   padding: 2rem;
-  max-width: 110rem;
+  max-width: 127rem;
   width: 90%;
   height: 100;
   z-index: 1;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
 
   &__row {
     display: flex;
