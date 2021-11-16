@@ -1,0 +1,45 @@
+@import "../../styles/variables";
+
+.btn__fill {
+  padding: 1rem 3rem;
+  border-radius: 31px 31px 31px 0px;
+  background: $color-primary;
+  color: $color-primary-light;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background: $color-primary-light;
+    color: $color-primary;
+    opacity: 0.9;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+}
+
+.btn__outline {
+  padding: 1rem 3rem;
+  border-radius: 31px 31px 31px 0px;
+  border: 1px solid $color-primary-light;
+  color: $color-primary-light;
+  transition: all 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    background: $color-primary-light;
+    color: $color-primary;
+    opacity: 0.9;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+}
