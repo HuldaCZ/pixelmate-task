@@ -6,9 +6,9 @@
   width: 100vw;
   height: 90vh;
   max-height: 92rem;
+  z-index: -1;
 
   background-image: url("../../../public/img/Video_screenshot_Mirek@2x.png");
   background-size: cover;
   background-position: top;
-  position: relative;
 }

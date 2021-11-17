@@ -1,11 +1,14 @@
-import React, { useLayoutEffect } from "react";
-import PixelmateLogo from "../../public/img/Pixelmate_logo_claim_white.svg";
+import React, { useEffect } from "react";
+import PixelmateLogoLight from "../../public/img/Pixelmate_logo_claim_white.svg";
+import PixelmateLogoDark from "../../public/img/Pixelmate_logo_claim_dark.svg";
 
 import styles from "./NavBar.module.scss";
 
 import Button from "../Button/Button";
+import { NavbarPropsI } from "../../Types";
 
-const NavBar: React.FC = () => {
+const NavBar: React.FC<NavbarPropsI> = (props: NavbarPropsI) => {
+  const { dark } = props;
   const [isScrolled, setIsScrolled] = React.useState(false);
 
   const handleScroll = () => {
@@ -16,7 +19,7 @@ const NavBar: React.FC = () => {
     }
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
@@ -26,12 +29,12 @@ const NavBar: React.FC = () => {
     <nav className={isScrolled ? styles.navbar_scrolled : styles.navbar}>
       <div className={styles.navbar__container}>
         <div className={styles.navbar__logo_container}>
-          <PixelmateLogo />
+          <a href="/">{dark ? <PixelmateLogoLight /> : <PixelmateLogoDark />}</a>
         </div>
         <div className={styles.navbar__menu_container}>
-          <ul className={styles.navbar__menu}>
+          <ul className={dark ? styles.navbar__menu_light : styles.navbar__menu_dark}>
             <li className={styles.navbar__menu_item}>
-              <a href="#" className={styles.navbar__menu_item_link}>
+              <a href="/designers" className={styles.navbar__menu_item_link}>
                 Designeři
               </a>
             </li>
