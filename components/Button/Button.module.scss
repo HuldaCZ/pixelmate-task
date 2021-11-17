@@ -23,7 +23,7 @@
   }
 }
 
-.btn__outline {
+.btn__outline_light {
   padding: 1rem 3rem;
   border-radius: 31px 31px 31px 0px;
   border: 1px solid $color-primary-light;
@@ -35,6 +35,52 @@
   &:hover {
     background: $color-primary-light;
     color: $color-primary;
+    opacity: 0.9;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+}
+
+.btn__outline_dark {
+  padding: 1rem 3rem;
+  border-radius: 31px 31px 31px 0px;
+  border: 1px solid $color-black;
+  color: $color-black;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover {
+    background: $color-black;
+    color: $color-primary-light;
+    opacity: 0.9;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+}
+
+.btn__outline_primary {
+  padding: 1rem 3rem;
+  border-radius: 31px 31px 31px 0px;
+  border: 1px solid $color-primary;
+  color: $color-primary;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover {
+    background: $color-primary;
+    color: $color-primary-light;
     opacity: 0.9;
     box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
     transform: translateY(-3px);

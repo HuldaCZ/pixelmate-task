@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import styles from "../styles/Home.module.scss";
+import styles from "../styles/Designers.module.scss";
 
 import NavBar from "../components/NavBar/NavBar";
 import Footer from "../components/Footer/Footer";
-
+import DesignerCard from "../components/DesignersPage/DesignerCard/DesignerCard";
 
 const DesignersPage: NextPage = () => {
   return (
@@ -21,9 +21,12 @@ const DesignersPage: NextPage = () => {
       </Head>
       <NavBar dark={false} />
 
-
       <main className={styles.main}>
-
+        <div className={styles.designers__main}>
+          <div className={styles.designers__grid}>
+            <DesignerCard />
+          </div>
+        </div>
       </main>
 
       <Footer />

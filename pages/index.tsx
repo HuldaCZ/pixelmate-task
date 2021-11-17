@@ -23,7 +23,7 @@ const Home: NextPage = () => {
           rel="stylesheet"
         />
       </Head>
-      <NavBar dark />
+      <NavBar dark={false} />
       <Header />
 
       <main className={styles.main}>
