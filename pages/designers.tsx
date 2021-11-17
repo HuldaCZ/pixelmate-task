@@ -1,12 +1,18 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+
 import styles from "../styles/Designers.module.scss";
 
 import NavBar from "../components/NavBar/NavBar";
 import Footer from "../components/Footer/Footer";
 import DesignerCard from "../components/DesignersPage/DesignerCard/DesignerCard";
 
-const DesignersPage: NextPage = () => {
+import { getUsers } from "../lib/users";
+import { UserI } from "../Types";
+
+const DesignersPage: NextPage = ({ users }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  console.log(users);
   return (
     <div className={styles.container}>
       <Head>
@@ -24,7 +30,10 @@ const DesignersPage: NextPage = () => {
       <main className={styles.main}>
         <div className={styles.designers__main}>
           <div className={styles.designers__grid}>
-            <DesignerCard />
+            {users &&
+              users.map((user: { user: UserI }) => {
+                return <DesignerCard key={user.user.id} user={user.user} />;
+              })}
           </div>
         </div>
       </main>
@@ -32,6 +41,16 @@ const DesignersPage: NextPage = () => {
       <Footer />
     </div>
   );
+};
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const users = await getUsers();
+  console.log(users);
+  return {
+    props: {
+      users,
+    },
+  };
 };
 
 export default DesignersPage;

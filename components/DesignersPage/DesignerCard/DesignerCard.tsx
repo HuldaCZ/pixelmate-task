@@ -4,27 +4,31 @@ import Button from "../../Button/Button";
 import IconLocation from "../../../public/img/icon-location.svg";
 
 import styles from "./DesignerCard.module.scss";
+import { DesignerCardI } from "../../../Types";
 
-const DesignerCard = (props: any) => {
+const DesignerCard = (props: DesignerCardI) => {
+  const { user } = props;
   return (
     <div className={styles.card}>
       <div className={styles.card__content}>
         <div className={styles.card__content__header}>
-          <p className={styles.card__content__header__userId}>r.barrett99</p>
-          <p className={styles.card__content__header__name}>Richard Barrett</p>
-          <p className={styles.card__content__header__email}>r.barrett99@email.com</p>
+          <p className={styles.card__content__header__username}>{user.username}</p>
+          <p className={styles.card__content__header__name}>{user.name}</p>
+          <p className={styles.card__content__header__email}>{user.email}</p>
         </div>
         <div className={styles.card__content__adress}>
           <div className={styles.card__content__adress__col_i}>
             <IconLocation />
           </div>
           <div className={styles.card__content__adress__col}>
-            <p className={styles.card__content__adress__city}>Praha</p>
-            <p className={styles.card__content__adress__street}>Na Lysinkách 443/57</p>
-            <p className={styles.card__content__adress__street}>147 00 Praha - Hodovičky</p>
+            <p className={styles.card__content__adress__city}>{user.address.city}</p>
+            <p className={styles.card__content__adress__street}>{user.address.street}</p>
+            <p className={styles.card__content__adress__street}>
+              {user.address.zipCode} {user.address.city}
+            </p>
           </div>
         </div>
-        <div className={styles.card__content__web}>www.petrhuli.cz</div>
+        <div className={styles.card__content__web}>{user.email}</div>
 
         <div className={styles.card__content__button}>
           <Button text="View Profile" onClick={() => {}} design="outline-primary" />
