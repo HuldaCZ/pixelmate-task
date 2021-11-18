@@ -25,7 +25,7 @@ const DesignersPage: NextPage = ({ users }: InferGetStaticPropsType<typeof getSt
           rel="stylesheet"
         />
       </Head>
-      <NavBar dark={false} />
+      <NavBar dark />
 
       <main className={styles.main}>
         <div className={styles.designers__main}>

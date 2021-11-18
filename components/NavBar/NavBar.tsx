@@ -14,6 +14,7 @@ const NavBar: React.FC<NavbarPropsI> = (props: NavbarPropsI) => {
   const router = useRouter();
   const { dark } = props;
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const [activePath, setActivePath] = React.useState("");
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
@@ -24,10 +25,19 @@ const NavBar: React.FC<NavbarPropsI> = (props: NavbarPropsI) => {
   };
 
   useEffect(() => {
+    setActivePath(router.pathname);
+
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const activeLink = (path: string) => {
+    if (activePath === path) {
+      return dark ? styles.active_dark : styles.active_light;
+    }
+    return "";
+  };
 
   return (
     <nav className={isScrolled ? styles.navbar_scrolled : styles.navbar}>
@@ -40,19 +50,16 @@ const NavBar: React.FC<NavbarPropsI> = (props: NavbarPropsI) => {
         <div className={styles.navbar__menu_container}>
           <ul className={styles.navbar__menu}>
             <li className={styles.navbar__menu_item}>
-              <a
-                href="/designers"
-                className={`${
-                  dark ? styles.navbar__menu_item_link_dark : styles.navbar__menu_item_link_light
-                } 
-                  ${
-                    router.asPath === "/designers" && dark
-                      ? styles.active_dark
-                      : styles.active_light
-                  }`}
-              >
-                Designeři
-              </a>
+              <Link href="/designers">
+                <p
+                  className={`${
+                    dark ? styles.navbar__menu_item_link_dark : styles.navbar__menu_item_link_light
+                  } 
+                  ${activeLink("/designers")} `}
+                >
+                  Designeři
+                </p>
+              </Link>
             </li>
             <li className={styles.navbar__menu_item}>
               <a

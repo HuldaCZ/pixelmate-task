@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import styles from "./AboutUs.module.scss";
 import Button from "../../Button/Button";
@@ -40,9 +41,9 @@ const AboutUs = () => {
         </div>
       </div>
       <div>
-        <a href="/designers">
+        <Link href="/designers">
           <Button design="fill" onClick={() => {}} text="CO DALŠÍHO SE ŠUŠKÁ" />
-        </a>
+        </Link>
       </div>
     </div>
   );
