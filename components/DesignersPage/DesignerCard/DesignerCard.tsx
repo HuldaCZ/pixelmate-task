@@ -24,7 +24,7 @@ const DesignerCard = (props: DesignerCardI) => {
             <p className={styles.card__content__adress__city}>{user.address.city}</p>
             <p className={styles.card__content__adress__street}>{user.address.street}</p>
             <p className={styles.card__content__adress__street}>
-              {user.address.zipCode} {user.address.city}
+              {user.address.zipcode} {user.address.city}
             </p>
           </div>
         </div>

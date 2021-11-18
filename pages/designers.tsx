@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
@@ -7,12 +8,18 @@ import styles from "../styles/Designers.module.scss";
 import NavBar from "../components/NavBar/NavBar";
 import Footer from "../components/Footer/Footer";
 import DesignerCard from "../components/DesignersPage/DesignerCard/DesignerCard";
+import SearchFiled from "../components/DesignersPage/SearchFiled/SearchField";
 
 import { getUsers } from "../lib/users";
 import { UserI } from "../Types";
 
 const DesignersPage: NextPage = ({ users }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log(users);
+  const [search, setSearch] = useState("");
+  const filterUsers = (name: string) =>
+    users.filter((user: { user: UserI }) =>
+      user.user.name.toLowerCase().includes(name.toLowerCase())
+    );
+
   return (
     <div className={styles.container}>
       <Head>
@@ -28,10 +35,11 @@ const DesignersPage: NextPage = ({ users }: InferGetStaticPropsType<typeof getSt
       <NavBar dark />
 
       <main className={styles.main}>
+        <SearchFiled onChange={(e) => setSearch(e.target.value)} />
         <div className={styles.designers__main}>
           <div className={styles.designers__grid}>
             {users &&
-              users.map((user: { user: UserI }) => {
+              filterUsers(search).map((user: { user: UserI }) => {
                 return <DesignerCard key={user.user.id} user={user.user} />;
               })}
           </div>

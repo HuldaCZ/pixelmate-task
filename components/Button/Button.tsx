@@ -25,9 +25,9 @@ const Button: React.FC<ButtonPropsI> = (props: ButtonPropsI) => {
   }
 
   return (
-    <div className={style} onClick={props.onClick}>
+    <button className={style} onClick={props.onClick}>
       {props.text}
-    </div>
+    </button>
   );
 };
 

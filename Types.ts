@@ -11,7 +11,7 @@ export interface NavbarPropsI {
 interface Address {
   street: string;
   city: string;
-  zipCode: string;
+  zipcode: string;
 }
 
 export interface UserI {
@@ -26,4 +26,8 @@ export interface UserI {
 
 export interface DesignerCardI {
   user: UserI;
+}
+
+export interface SearchFieldPropsI {
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
