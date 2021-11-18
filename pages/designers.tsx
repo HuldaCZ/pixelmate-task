@@ -21,33 +21,34 @@ const DesignersPage: NextPage = ({ users }: InferGetStaticPropsType<typeof getSt
     );
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Pixelmate - Designers</title>
-        <meta name="description" content="Pixelmate - designers" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
-      <NavBar dark />
+    <>
+      <div className={styles.container}>
+        <Head>
+          <title>Pixelmate - Designers</title>
+          <meta name="description" content="Pixelmate - designers" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
+        <NavBar dark />
 
-      <main className={styles.main}>
-        <SearchFiled onChange={(e) => setSearch(e.target.value)} />
-        <div className={styles.designers__main}>
-          <div className={styles.designers__grid}>
-            {users &&
-              filterUsers(search).map((user: { user: UserI }) => {
-                return <DesignerCard key={user.user.id} user={user.user} />;
-              })}
+        <main className={styles.main}>
+          <SearchFiled onChange={(e) => setSearch(e.target.value)} />
+          <div className={styles.designers__main}>
+            <div className={styles.designers__grid}>
+              {users &&
+                filterUsers(search).map((user: { user: UserI }) => {
+                  return <DesignerCard key={user.user.id} user={user.user} />;
+                })}
+            </div>
           </div>
-        </div>
-      </main>
-
+        </main>
+      </div>
       <Footer />
-    </div>
+    </>
   );
 };
 

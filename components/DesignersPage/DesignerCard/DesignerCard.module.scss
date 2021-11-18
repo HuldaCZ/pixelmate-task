@@ -3,11 +3,11 @@
 
 .card {
   box-sizing: border-box;
-  width: 402px;
-  height: 512px;
+  width: 40.2rem;
+  height: 51.2rem;
   background: #ffffff 0% 0% no-repeat padding-box;
-  box-shadow: 0px 20px 70px #16181c1a;
-  border-radius: 25px 25px 25px 0px;
+  box-shadow: 0px 2rem 7rem #16181c1a;
+  border-radius: 2.5rem 2.5rem 2.5rem 0px;
   opacity: 1;
   padding: 0 3rem;
 
@@ -109,3 +109,11 @@
     }
   }
 }
+
+@media (max-width: 1100px) {
+  .card {
+    width: 38rem;
+    height: 48rem;
+  }
+}
+

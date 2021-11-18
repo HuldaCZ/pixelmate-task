@@ -1,15 +1,23 @@
 @import "../../styles/variables";
 
+.nav {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+}
+
 .navbar {
   position: fixed;
   position: -webkit-sticky;
-  left: 0;
-  right: 0;
   padding: 2rem 0;
-  top: 0;
   z-index: 10;
   width: 100%;
-  height: 5rem;
   font-size: 1.6rem;
   font-weight: 500;
   transition: all 0.3s;
@@ -29,6 +37,7 @@
     justify-content: space-evenly;
     width: 100%;
     height: 100%;
+    height: 5rem;
 
     &_item {
       display: flex;
@@ -38,7 +47,6 @@
       list-style: none;
       transition: all 0.1s;
 
-      
       font-size: 1.6rem;
       letter-spacing: 0.1rem;
       cursor: pointer;
@@ -61,8 +69,6 @@
           transform: scale(1.05);
           border-bottom: 1px solid $color-black;
         }
-
-        
       }
 
       &:active {
@@ -86,7 +92,6 @@
   font-weight: 500;
   background-color: rgba($color-black, 0.5);
   transition: all 0.3s;
-
 }
 
 .active_dark {
@@ -95,4 +100,60 @@
 
 .active_light {
   border-bottom: 1px solid $color-primary-light;
+}
+
+.navbar__burger {
+  box-sizing: border-box;
+  &_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
+    height: 100vh;
+    font-size: 2rem;
+  }
+
+  &_menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    padding: 2rem;
+    background-color: rgba($color-black, 0.95);
+    transition: all 0.3s ease-in-out;
+    z-index: 10;
+    color: #fff;
+
+    &_item {
+      margin: 1rem 0;
+    }
+  }
+
+  &_cancel {
+    z-index: 50;
+    position: absolute;
+    top: 5rem;
+    right: 5rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &_icon {
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    margin-right: 2rem;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 0 1rem 1rem rgba($color-black, 0.2);
+    }
+  }
 }
