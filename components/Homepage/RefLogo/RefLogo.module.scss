@@ -12,8 +12,9 @@
     align-items: center;
     border-radius: 5px;
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.1);
-    animation: moveInBottom 1s ease-in-out;
+    animation: moveInBottomLogos 1s ease-in-out;
     animation-delay: 1s;
     animation-fill-mode: backwards;
+    transform: translateY(-20%);
   }
 }

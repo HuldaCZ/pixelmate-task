@@ -35,11 +35,11 @@ const Home: NextPage = () => {
             <LoginForm />
           </div>
         </div>
-        <div className={styles.main_row}>
+        <div className={styles.main__column}>
           <RefLogo />
-        </div>
-        <div className={styles.main__row}>
-          <AboutUs />
+          <div className={styles.main__row}>
+            <AboutUs />
+          </div>
         </div>
       </main>
 

@@ -85,7 +85,7 @@ const LoginForm: React.FC = () => {
             <label className={styles.loginForm__form__error}>{error}</label>
           </div>
 
-          <Button type="submit" design="fill" onClick={() => {}} text="Přihlásit se &rarr;" />
+          <Button type="submit" design="fill" onClick={() => {}} text="PŘIHLASIT SE &rarr;" />
         </form>
       </div>
     </div>

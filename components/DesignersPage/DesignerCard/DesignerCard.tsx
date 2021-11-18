@@ -33,7 +33,7 @@ const DesignerCard = (props: DesignerCardI) => {
 
         <div className={styles.card__content__button}>
           <Link href={`/designers/${user.id}`}>
-            <Button text="View Profile" onClick={() => {}} design="outline-primary" />
+            <Button text="ZOBRAZIT PROFIL &rarr;" onClick={() => {}} design="outline-primary" />
           </Link>
         </div>
       </div>

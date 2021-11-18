@@ -14,7 +14,7 @@ const Heading: React.FC = () => {
       </h2>
 
       <div className={styles.heading__button_wrapper}>
-        <Button text="Kontaktujte nás &rarr;" design="fill" onClick={() => {}} />
+        <Button text="KONTAKTUJTE NÁS &rarr;" design="fill" onClick={() => {}} />
       </div>
     </div>
   );
