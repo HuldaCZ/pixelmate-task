@@ -53,6 +53,7 @@ const DesignersPage: NextPage = ({ users }: InferGetStaticPropsType<typeof getSt
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const users = await getUsers();
+
   console.log(users);
   return {
     props: {

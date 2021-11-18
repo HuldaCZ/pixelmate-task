@@ -35,7 +35,7 @@ const NavBar: React.FC<NavbarPropsI> = (props: NavbarPropsI) => {
 
   const activeLink = (path: string) => {
     if (activePath === path) {
-      return dark ? styles.active_dark : styles.active_light;
+      return dark && !isScrolled ? styles.active_dark : styles.active_light;
     }
     return "";
   };
@@ -47,7 +47,7 @@ const NavBar: React.FC<NavbarPropsI> = (props: NavbarPropsI) => {
         <div className={styles.navbar__container}>
           <div className={styles.navbar__logo_container}>
             <Link href="/">
-              <a href="/">{dark ? <PixelmateLogoDark /> : <PixelmateLogoLight />}</a>
+              <a href="/">{dark && !isScrolled ? <PixelmateLogoDark /> : <PixelmateLogoLight />}</a>
             </Link>
           </div>
           <div className={styles.navbar__menu_container}>
@@ -56,7 +56,7 @@ const NavBar: React.FC<NavbarPropsI> = (props: NavbarPropsI) => {
                 <Link href="/designers">
                   <p
                     className={`${
-                      dark
+                      dark && !isScrolled
                         ? styles.navbar__menu_item_link_dark
                         : styles.navbar__menu_item_link_light
                     } 
@@ -70,7 +70,7 @@ const NavBar: React.FC<NavbarPropsI> = (props: NavbarPropsI) => {
                 <a
                   href="#"
                   className={
-                    dark ? styles.navbar__menu_item_link_dark : styles.navbar__menu_item_link_light
+                    dark && !isScrolled ? styles.navbar__menu_item_link_dark : styles.navbar__menu_item_link_light
                   }
                 >
                   Portfolio
@@ -79,7 +79,7 @@ const NavBar: React.FC<NavbarPropsI> = (props: NavbarPropsI) => {
               <li className={styles.navbar__menu_item}>
                 <Button
                   onClick={() => setIsModalOpen(true)}
-                  design={dark ? "outline-dark" : "outline-light"}
+                  design={dark && !isScrolled ? "outline-dark" : "outline-light"}
                   text="Přihlásit se"
                 />
               </li>

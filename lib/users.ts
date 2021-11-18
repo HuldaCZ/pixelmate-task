@@ -12,3 +12,13 @@ export async function getUsers() {
     };
   });
 }
+
+export async function getUserData(userId: any) {
+  const res = await axios.get(`https://jsonplaceholder.typicode.com/users/${userId}`);
+
+  const user = res.data;
+
+  return {
+    user: user,
+  };
+}

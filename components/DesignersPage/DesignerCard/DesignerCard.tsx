@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Button from "../../Button/Button";
 
 import IconLocation from "../../../public/img/icon-location.svg";
@@ -31,7 +32,9 @@ const DesignerCard = (props: DesignerCardI) => {
         <div className={styles.card__content__web}>{user.email}</div>
 
         <div className={styles.card__content__button}>
-          <Button text="View Profile" onClick={() => {}} design="outline-primary" />
+          <Link href={`/designers/${user.id}`}>
+            <Button text="View Profile" onClick={() => {}} design="outline-primary" />
+          </Link>
         </div>
       </div>
     </div>
