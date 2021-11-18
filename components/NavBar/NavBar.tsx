@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 import PixelmateLogoLight from "../../public/img/Pixelmate_logo_claim_white.svg";
@@ -17,11 +17,11 @@ import { NavbarPropsI } from "../../Types";
 const NavBar: React.FC<NavbarPropsI> = (props: NavbarPropsI) => {
   const router = useRouter();
   const { dark } = props;
-  const [isScrolled, setIsScrolled] = React.useState(false);
-  const [activePath, setActivePath] = React.useState("");
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const [isBurgerActive, setIsBurgerActive] = React.useState(false);
-  const [width, setWidth] = React.useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activePath, setActivePath] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isBurgerActive, setIsBurgerActive] = useState(false);
+  const [width, setWidth] = useState(0);
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
@@ -48,7 +48,7 @@ const NavBar: React.FC<NavbarPropsI> = (props: NavbarPropsI) => {
   };
 
   return (
-    <div className={styles.nav}>
+    <div>
       {isModalOpen && <Modal onClose={() => setIsModalOpen(false)} />}
       <nav className={isScrolled ? styles.navbar_scrolled : styles.navbar}>
         <div className={styles.navbar__container}>
@@ -96,7 +96,7 @@ const NavBar: React.FC<NavbarPropsI> = (props: NavbarPropsI) => {
               </ul>
             ) : (
               <div className={styles.navbar__burger_icon}>
-                <IconMenu onClick={() => setIsBurgerActive(true)} fill={dark ? "black" : "white"} />
+                <IconMenu onClick={() => setIsBurgerActive(true)} fill={dark && !isScrolled ? "black" : "white"} />
               </div>
             )}
           </div>
@@ -108,9 +108,21 @@ const NavBar: React.FC<NavbarPropsI> = (props: NavbarPropsI) => {
             <IconCancel onClick={() => setIsBurgerActive(false)} />
           </div>
           <ul className={styles.navbar__burger_menu}>
+          <li className={`${styles.navbar__menu_item} ${styles.navbar__burger_menu_item}`}>
+              <Link href="/">
+                <p
+                  onClick={() => setIsBurgerActive(false)}
+                  className={`${styles.navbar__menu_item_link_light} 
+                  ${activeLink("/")} `}
+                >
+                  Domů
+                </p>
+              </Link>
+            </li>
             <li className={`${styles.navbar__menu_item} ${styles.navbar__burger_menu_item}`}>
               <Link href="/designers">
                 <p
+                  onClick={() => setIsBurgerActive(false)}
                   className={`${styles.navbar__menu_item_link_light} 
                   ${activeLink("/designers")} `}
                 >
@@ -119,13 +131,20 @@ const NavBar: React.FC<NavbarPropsI> = (props: NavbarPropsI) => {
               </Link>
             </li>
             <li className={`${styles.navbar__menu_item} ${styles.navbar__burger_menu_item}`}>
-              <a href="#" className={styles.navbar__menu_item_link_light}>
+              <a
+                href="#"
+                className={styles.navbar__menu_item_link_light}
+                onClick={() => setIsBurgerActive(false)}
+              >
                 Portfolio
               </a>
             </li>
             <li className={`${styles.navbar__menu_item} ${styles.navbar__burger_menu_item}`}>
               <Button
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => {
+                  setIsModalOpen(true);
+                  setIsBurgerActive(false);
+                }}
                 design={"outline-light"}
                 text="Přihlásit se"
               />
