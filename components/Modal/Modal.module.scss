@@ -1,0 +1,101 @@
+@import "../../styles/animations";
+
+.modal {
+  box-sizing: border-box;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  width: 678px;
+  height: 396px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1.6rem;
+  padding: 0 4rem;
+  text-align: center;
+  animation: moveInTopModal 0.5s ease-in-out;
+  
+
+  &__cancel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+
+    &:hover {
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__title {
+    font: normal normal bold 24px/34px Montserrat;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+  }
+  &__text {
+    text-align: center;
+    font: normal normal normal 18px/30px Montserrat;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &__input {
+      background: transparent;
+      border: none;
+      outline: none;
+      width: 90%;
+      text-align: left;
+      font: normal normal bold 1.2rem/1.5rem Montserrat;
+      letter-spacing: 0px;
+      color: #8e929f;
+      opacity: 1;
+      height: 2rem;
+
+      &_border {
+        background: #ffffff 0% 0% no-repeat padding-box;
+        border: 1px solid #e0e0e5;
+        opacity: 1;
+        width: 37.4rem;
+        height: 5.6rem;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    &__error {
+      font: normal normal normal 1.2rem/1.5rem Montserrat;
+      letter-spacing: 0px;
+      color: #ff0000;
+      opacity: 1;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9998;
+}

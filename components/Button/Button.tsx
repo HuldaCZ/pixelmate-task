@@ -25,7 +25,7 @@ const Button: React.FC<ButtonPropsI> = (props: ButtonPropsI) => {
   }
 
   return (
-    <button className={style} onClick={props.onClick}>
+    <button type={props.type} className={style} onClick={props.onClick}>
       {props.text}
     </button>
   );

@@ -57,8 +57,9 @@
       height: 3rem;
 
       &:focus + .loginForm__form__span {
-        transform: translateY(-1.7rem);
+        transform: translateY(-1.8rem);
       }
+
     }
 
     &__span {
@@ -68,6 +69,16 @@
       transform: translateY(-0.5rem);
       font-size: 0.825em;
       transition-duration: 300ms;
+
+      &_filled {
+        transform: translateY(-1.8rem);
+      }
+    }
+
+    &__error {
+      color: red;
+      font-size: 1.2rem;
+      text-align: center;
     }
   }
 
