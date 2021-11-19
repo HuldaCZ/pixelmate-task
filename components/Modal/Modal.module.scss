@@ -1,5 +1,5 @@
 @import "../../styles/animations";
-
+@import "../../styles/variables";
 .modal {
   box-sizing: border-box;
   position: fixed;
@@ -19,7 +19,6 @@
   padding: 0 4rem;
   text-align: center;
   animation: moveInTopModal 0.5s ease-in-out;
-  
 
   &__cancel {
     position: absolute;
@@ -98,4 +97,10 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
   z-index: 9998;
+}
+
+@media (max-width: 768px) {
+  .modal {
+    width: 80%;
+  }
 }

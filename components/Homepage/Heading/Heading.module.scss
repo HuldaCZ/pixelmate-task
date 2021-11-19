@@ -38,3 +38,24 @@
     animation: moveInBottom 0.9s ease-in-out;
   }
 }
+
+@media (max-width: $screen-sm) {
+  .heading {
+    &__title {
+      font-size: 4rem;
+    }
+  }
+}
+
+@media (max-width: $screen-lg) {
+  .heading {
+    &__title {
+      font-size: 5rem;
+      padding-right: 1rem;
+    }
+    &__subtitle {
+      font-size: 1.8rem;
+      padding-right: 1rem;
+    }
+  }
+}

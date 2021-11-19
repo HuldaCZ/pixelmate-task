@@ -9,8 +9,17 @@ import LoginForm from "../components/Homepage/LoginForm/LoginForm";
 import RefLogo from "../components/Homepage/RefLogo/RefLogo";
 import Footer from "../components/Footer/Footer";
 import AboutUs from "../components/Homepage/AboutUs/AboutUs";
+import { useEffect, useState } from "react";
 
 const Home: NextPage = () => {
+  const [screenWidth, setScreenWidth] = useState(0);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setScreenWidth(window.innerWidth);
+    }
+  }, []);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -28,14 +37,16 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <div className={styles.main__row}>
-          <div className={styles.main__column}>
+          <div >
             <Heading />
           </div>
-          <div>
-            <LoginForm />
-          </div>
+          {screenWidth > 900 && (
+            <div>
+              <LoginForm />
+            </div>
+          )}
         </div>
-        <div className={styles.main__column}>
+        <div className={styles.main__col}>
           <RefLogo />
           <div className={styles.main__row}>
             <AboutUs />

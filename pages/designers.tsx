@@ -20,6 +20,23 @@ const DesignersPage: NextPage = ({ users }: InferGetStaticPropsType<typeof getSt
       user.user.name.toLowerCase().includes(name.toLowerCase())
     );
 
+  let skeletons = [];
+  for (let i = 0; i < 6; i++) {
+    const user: UserI = {
+      id: i,
+      name: "",
+      username: "",
+      email: "",
+      address: {
+        street: "",
+        city: "",
+        zipcode: "",
+      },
+      website: "",
+      phone: "",
+    };
+    skeletons.push(user);
+  }
   return (
     <>
       <div className={styles.container}>
@@ -39,10 +56,13 @@ const DesignersPage: NextPage = ({ users }: InferGetStaticPropsType<typeof getSt
           <SearchFiled onChange={(e) => setSearch(e.target.value)} />
           <div className={styles.designers__main}>
             <div className={styles.designers__grid}>
-              {users &&
-                filterUsers(search).map((user: { user: UserI }) => {
-                  return <DesignerCard key={user.user.id} user={user.user} />;
-                })}
+              {users
+                ? filterUsers(search).map((user: { user: UserI }) => {
+                    return <DesignerCard key={user.user.id} user={user.user} />;
+                  })
+                : skeletons.map((user: UserI) => {
+                    return <DesignerCard key={user.id} user={user} />;
+                  })}
             </div>
           </div>
         </main>

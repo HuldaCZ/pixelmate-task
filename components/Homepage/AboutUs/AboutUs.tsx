@@ -40,7 +40,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div className={styles.aboutUs__button_container}>
         <Link href="/designers">
           <Button design="fill" onClick={() => {}} text="CO DALŠÍHO SE ŠUŠKÁ" />
         </Link>

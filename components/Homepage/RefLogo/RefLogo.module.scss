@@ -3,6 +3,7 @@
 
 .logos {
   &_container {
+    box-sizing: border-box;
     background-color: $color-white;
     margin-top: 22rem;
     height: 13.4rem;
@@ -16,5 +17,30 @@
     animation-delay: 1s;
     animation-fill-mode: backwards;
     transform: translateY(-20%);
+  }
+}
+
+@media (max-width: $screen-sm) {
+  .logos {
+    &_container {
+      position: relative;
+      margin-top: 22rem;
+      margin-bottom: 8rem;
+      height: auto;
+      width: 60%;
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 2rem;
+    }
+  }
+
+  .logo_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 2rem;
   }
 }

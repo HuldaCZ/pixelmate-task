@@ -43,8 +43,9 @@ const NavBar: React.FC<NavbarPropsI> = (props: NavbarPropsI) => {
   const activeLink = (path: string) => {
     if (activePath === path) {
       return dark && !isScrolled ? styles.active_dark : styles.active_light;
+    } else {
+      return "";
     }
-    return "";
   };
 
   return (
@@ -96,7 +97,10 @@ const NavBar: React.FC<NavbarPropsI> = (props: NavbarPropsI) => {
               </ul>
             ) : (
               <div className={styles.navbar__burger_icon}>
-                <IconMenu onClick={() => setIsBurgerActive(true)} fill={dark && !isScrolled ? "black" : "white"} />
+                <IconMenu
+                  onClick={() => setIsBurgerActive(true)}
+                  fill={dark && !isScrolled ? "black" : "white"}
+                />
               </div>
             )}
           </div>
@@ -108,12 +112,12 @@ const NavBar: React.FC<NavbarPropsI> = (props: NavbarPropsI) => {
             <IconCancel onClick={() => setIsBurgerActive(false)} />
           </div>
           <ul className={styles.navbar__burger_menu}>
-          <li className={`${styles.navbar__menu_item} ${styles.navbar__burger_menu_item}`}>
+            <li className={`${styles.navbar__menu_item} ${styles.navbar__burger_menu_item}`}>
               <Link href="/">
                 <p
                   onClick={() => setIsBurgerActive(false)}
                   className={`${styles.navbar__menu_item_link_light} 
-                  ${activeLink("/")} `}
+                  ${activePath === "/" && styles.active_light} `}
                 >
                   Domů
                 </p>
@@ -124,7 +128,7 @@ const NavBar: React.FC<NavbarPropsI> = (props: NavbarPropsI) => {
                 <p
                   onClick={() => setIsBurgerActive(false)}
                   className={`${styles.navbar__menu_item_link_light} 
-                  ${activeLink("/designers")} `}
+                  ${activePath === "/designers" && styles.active_light} `}
                 >
                   Designeři
                 </p>

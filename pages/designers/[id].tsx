@@ -43,7 +43,7 @@ const DesignerPage: NextPage = ({ userData }: InferGetStaticPropsType<typeof get
           </Link>
           <div className={cardStyles.card__content}>
             <div className={cardStyles.card__content__header}>
-              <p className={cardStyles.card__content__header__username}>{user.username}</p>
+              <p className={cardStyles.card__content__header__username}>{user.username }</p>
               <p className={cardStyles.card__content__header__name}>{user.name}</p>
               <p className={cardStyles.card__content__header__email}>{user.email}</p>
             </div>
