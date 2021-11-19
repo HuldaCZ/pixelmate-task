@@ -47,7 +47,7 @@ const Home: NextPage = () => {
           )}
         </div>
         <div className={styles.main__col}>
-          <RefLogo />
+          <div className={styles.spacer} ></div>
           <div className={styles.main__row}>
             <AboutUs />
           </div>

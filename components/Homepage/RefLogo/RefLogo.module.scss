@@ -3,11 +3,13 @@
 
 .logos {
   &_container {
+    position: absolute;
+    bottom: 0;
     box-sizing: border-box;
     background-color: $color-white;
     margin-top: 22rem;
     height: 13.4rem;
-    width: 100%;
+    width: 127rem;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -16,7 +18,9 @@
     animation: moveInBottomLogos 1s ease-in-out;
     animation-delay: 1s;
     animation-fill-mode: backwards;
-    transform: translateY(-20%);
+    transform: translate(-50%, 50%);
+    left: 50%;
+    z-index: 30;
   }
 }
 
